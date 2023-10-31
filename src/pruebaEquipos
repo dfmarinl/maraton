@@ -1,0 +1,82 @@
+
+  const [selectedTeam, setSelectedTeam] = useState(null);
+  
+  const [newMember, setNewMember] = useState({
+    name: '',
+    code: '',
+    category: '',
+  });
+
+  
+  <div>
+  <h2>Agregar Miembro</h2>
+  <label>Nombre:</label>
+  <input
+    type="text"
+    name="name"
+    value={newMember.name}
+    onChange={handleMemberChange}
+  />
+  <label>Código:</label>
+  <input
+    type="text"
+    name="code"
+    value={newMember.code}
+    onChange={handleMemberChange}
+  />
+  <label>Categoría:</label>
+  <input
+    type="text"
+    name="category"
+    value={newMember.category}
+    onChange={handleMemberChange}
+  />
+  <label>Equipo:</label>
+  <select onChange={handleTeamSelect} value={selectedTeam}>
+    <option value="">Selecciona un equipo</option>
+    {teams.map((team, index) => (
+      <option key={index} value={index}>
+        {team.name}
+      </option>
+    ))}
+  </select>
+  <button onClick={handleAddMember}>Agregar Miembro</button>
+</div>
+
+
+const handleMemberChange = (e) => {
+    const { name, value } = e.target;
+    setNewMember({ ...newMember, [name]: value });
+  };
+  
+  const handleTeamSelect = (e) => {
+    const index = parseInt(e.target.value, 10);
+    setSelectedTeam(index);
+  };
+  
+  const handleAddMember = () => {
+    if (selectedTeam === null) {
+      alert('Selecciona un equipo antes de agregar un miembro.');
+      return;
+    }
+  
+    // Copia el equipo actual para no mutar el estado directamente.
+    const updatedTeams = [...teams];
+    const team = updatedTeams[selectedTeam];
+  
+    // Agrega el nuevo miembro al equipo seleccionado.
+    team.members.push(newMember);
+  
+    // Actualiza el estado con los equipos actualizados.
+    setTeams(updatedTeams);
+  
+    // Limpia el formulario de nuevo miembro y reinicia la selección de equipo.
+    setNewMember({
+      name: '',
+      code: '',
+      category: '',
+    });
+    setSelectedTeam(null);
+  };
+  
+  export default pruebaEquipos;

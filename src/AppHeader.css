@@ -1,0 +1,20 @@
+.app-header {
+    background-color: #000000; /* Color de fondo azul */
+    color: #fff; /* Texto en blanco */
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+ 
+  .logo {
+    width: 200px; /* Define el ancho de la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    display: block; /* Evita espacios innecesarios debajo de la imagen */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+  }
+  .app-container {
+    display: flex; /* Utiliza flexbox para controlar la disposición */
+    justify-content: space-between; /* Coloca espacio entre los componentes */
+    align-items: flex-start; /* Alinea los componentes en la parte superior */
+  }

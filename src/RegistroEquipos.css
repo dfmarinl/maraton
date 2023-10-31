@@ -1,0 +1,33 @@
+.registro-equipos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #00d9ff; /* Fondo de color rojo */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .registro-equipos-container h2 {
+    text-align: center;
+    color: #fff; /* Texto en blanco */
+  }
+  
+  .registro-equipos-container input, select, label {
+    margin: 10px 0;
+  }
+  
+  .registro-equipos-container button {
+    background-color: #000000; /* Botón de color rojo */
+    color: #fff; /* Texto en blanco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .registro-equipos-container button:hover {
+    background-color: #00000075; /* Cambia el color al pasar el ratón sobre el botón */
+  }
